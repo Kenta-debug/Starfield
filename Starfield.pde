@@ -1,16 +1,19 @@
 Particle [] bob;
+
 void setup()
 {
   //your code here
   background(0);
-  bob = new Particle[666];
-  size(500,500);
+  bob = new Particle[1000];
+  
+  size(1000,1000);
   for( int i = 0; i < bob.length; i++)
   {
     bob[i] = new Particle();
     bob[i].Angle();
     bob[i].speed();
   }
+  
 }
 void draw()
 {
@@ -45,13 +48,12 @@ double angle, speed,ellipseSize, myX, myY;
   {
     myX = myX + Math.cos(angle) * speed;
     myY = myY + Math.sin(angle) * speed;
-    if((myX > 500 || myX < 0) || (myY > 500 || myY < 0)){
-      myX = myY = 250;
-    }
+  
   }
   
   void show()
   {
+    fill(45,45,255);
     ellipse((float)myX,(float)myY,(float)ellipseSize, (float)ellipseSize);
   }
 }
